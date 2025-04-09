@@ -77,7 +77,7 @@
         #5e3a9b 0%,
         #5e3a9b calc((1 - var(--percent, 0)) * 100%),
         #7e57c2 calc(var(--percent, 0) * 50%),
-        #26c6da calc(var(--percent, 0) * 100%)
+        #00a497 calc(var(--percent, 0) * 100%)
       );
       -webkit-mask: 
         linear-gradient(#fff 0 0) content-box, 
@@ -117,13 +117,19 @@
     }
 
     .thumb-emoji {
-      position: absolute;
-      top: -10px;
-      right: -10px;
-      font-size: 24px;
-      animation: shake 0.6s infinite;
-    }
-
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 28px;
+    height: 28px;
+    animation: shake 0.6s infinite;
+    z-index: 1;
+  }
+  .received-box {
+    border: 3px solid #5e3a9b;
+    position: relative; /* 추가됨 */
+  }
+  
     @keyframes shake {
       0% { transform: rotate(0deg); }
       25% { transform: rotate(10deg); }
@@ -185,7 +191,8 @@
       </div>
       <div class="received-box shimmer" id="receivedTokenBtn">
         Received Tokens
-        <div id="thumbEmoji" class="thumb-emoji">👍</div>
+
+        <img src="unnamed.gif" class="thumb-emoji">
       </div>
     </div>
   </div>
