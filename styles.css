@@ -1,0 +1,166 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 30px;
+    background-color: #f9f9f9;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  h2 {
+    font-size: 20px;
+  }
+  
+  .user-info h3 {
+    margin: 0;
+    font-size: 22px;
+  }
+  
+  .user-info p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .button-group {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .sent-box {
+    width: 140px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 10px 12px;
+  }
+  
+  .sent-box:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .sent-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .sent-count {
+    display: none;
+    margin-top: 8px;
+    color: #00bfa5;
+    text-decoration: underline;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .received-wrapper {
+    position: relative;
+  }
+  
+  .received-box {
+    padding: 10px 16px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    width: 140px;
+    text-align: center;
+  }
+  
+  .received-box:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+  }
+  
+  .modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 8px;
+  }
+  
+  .modal-content h3 {
+    color: teal;
+  }
+  
+  .modal-header {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .modal-header input,
+  .modal-header select {
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+  
+  .modal-header button {
+    padding: 6px 12px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  .close-btn {
+    display: block;
+    margin: 20px auto 0;
+    background-color: #777;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .close-btn:hover {
+    background-color: #555;
+  }
+  
+  .firework {
+    position: fixed;
+    width: 120px;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000;
+    display: none;
+  }
+  

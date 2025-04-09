@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Tokens</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .badge {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background-color: red;
+      color: white;
+      border-radius: 50%;
+      font-size: 12px;
+      padding: 3px 7px;
+      box-shadow: 0 0 10px red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>My Tokens</h2>
+    <div class="user-info">
+      <h3>Jihoon Choi (2023088)</h3>
+      <p>SCHOOL OF DATA SCIENCE & ARTIFICIAL INTELLIGENCE</p>
+    </div>
+
+    <div class="button-group">
+      <!-- Sent token 박스 -->
+      <div class="sent-box" id="sentBox">
+        <div class="sent-header">
+          <span>Sent token</span>
+          <span id="sentArrow">▼</span>
+        </div>
+        <div class="sent-count" id="sentCount">1 / 30</div>
+      </div>
+
+      <!-- Recieved token 박스 -->
+      <div class="received-wrapper" id="receivedWrapper" style="position: relative;">
+        <div class="received-box" id="receivedTokenBtn">Recieved Tokens</div>
+        <div id="receivedBadge" class="badge">1</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sent Modal -->
+  <div class="modal" id="sentModal">
+    <div class="modal-content">
+      <h3>Sent Tokens</h3>
+      <div class="modal-header">
+        <label>Year</label>
+        <input type="text" value="2025" />
+        <label>Order</label>
+        <select>
+          <option>1st</option>
+          <option>2nd</option>
+        </select>
+        <span>My Tokens 30</span>
+        <button>Search</button>
+      </div>
+      <div>All : 1 Cases</div>
+      <table>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Recipient</th>
+            <th>Competency</th>
+            <th>Sent Token</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Shahar Bezalel</td>
+            <td>Global Harmony and Sustainability</td>
+            <td>Thank you for organizing the 2025 Spring Semester Dinner RCP where cohorts gathered to build relationships in Taejae.</td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="close-btn" id="closeSentModal">Close</button>
+    </div>
+  </div>
+
+  <!-- Received Modal -->
+  <div class="modal" id="receivedModal">
+    <div class="modal-content">
+      <h3>Recieved Tokens</h3>
+      <div class="modal-header">
+        <label>Year</label>
+        <input type="text" value="2025" />
+        <label>Order</label>
+        <select>
+          <option>1st</option>
+          <option>2nd</option>
+        </select>
+        <span>My Tokens 30</span>
+        <button>Search</button>
+      </div>
+      <div>All : 1 Cases</div>
+      <table>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Competency</th>
+            <th>Compliments</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Global Harmony and Sustainability</td>
+            <td>Thank you for your leadership and inclusion efforts during the Spring Semester Dinner!</td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="close-btn" id="closeReceivedModal">Close</button>
+    </div>
+  </div>
+
+  <script>
+    const sentBox = document.getElementById("sentBox");
+    const sentArrow = document.getElementById("sentArrow");
+    const sentCount = document.getElementById("sentCount");
+    const sentModal = document.getElementById("sentModal");
+    const receivedBtn = document.getElementById("receivedTokenBtn");
+    const receivedModal = document.getElementById("receivedModal");
+    const closeSentModal = document.getElementById("closeSentModal");
+    const closeReceivedModal = document.getElementById("closeReceivedModal");
+    const receivedBadge = document.getElementById("receivedBadge");
+
+    let sentOpen = false;
+
+    sentBox.addEventListener("click", (e) => {
+      if (e.target === sentCount) return;
+      sentOpen = !sentOpen;
+      sentCount.style.display = sentOpen ? "block" : "none";
+      sentArrow.textContent = sentOpen ? "▲" : "▼";
+    });
+
+    sentCount.addEventListener("click", (e) => {
+      e.stopPropagation();
+      sentModal.style.display = "block";
+    });
+
+    receivedBtn.addEventListener("click", () => {
+      receivedBadge.style.display = "none";
+      receivedModal.style.display = "block";
+    });
+
+    closeSentModal.addEventListener("click", () => {
+      sentModal.style.display = "none";
+    });
+
+    closeReceivedModal.addEventListener("click", () => {
+      receivedModal.style.display = "none";
+    });
+
+    window.addEventListener("click", (e) => {
+      if (e.target === sentModal) sentModal.style.display = "none";
+      if (e.target === receivedModal) receivedModal.style.display = "none";
+    });
+  </script>
+</body>
+</html>
