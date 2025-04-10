@@ -191,7 +191,7 @@
       <div class="received-box shimmer" id="receivedTokenBtn">
         Received Tokens
 
-        <img src="unnamed.gif" class="thumb-emoji">
+        <img src="unnamed.gif" class="thumb-emoji" id="thumbEmoji">
       </div>
     </div>
   </div>
@@ -291,7 +291,8 @@
     let sentTotal = 30;
 
     function updateSentProgress() {
-    const percent = sentUsed / sentTotal;
+    let percent = sentUsed / sentTotal;
+    percent = Math.pow(percent, 0.9);
     const r = Math.round(94 + (0 - 94) * percent);     // 94 → 0
     const g = Math.round(58 + (164 - 58) * percent);   // 58 → 164
     const b = Math.round(155 + (151 - 155) * percent); // 155 → 151
